@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Password Generator</title>
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+    <div class="wrapper">
+  
+        <header>
+         <h1>Password Generator</h1>
+        </header>
+
+        <div class="card">
+            <div class="card-header">
+            <h2>Generate a Password</h2>
+        </div>
+
+        <div class="card-body">
+            <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+            ></textarea>
+        </div>
+
+        <div class="card-footer">
+            <button class="btn" id="showCriteria">Generate Password</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal"> 
+        <div class="modal-content">
+        <div class="modal-header">
+            <h2> Select Password Criteria </h2>
+        </div>
+        <div class="modal-body">
+            <form id="form">
+                <div class="pw-size-div">
+                    <label for="Password Size"> Password Size: </label>
+                    
+                    <div class="errMsg"id="sizeErr"> 
+                        Enter a number between 8 and 128.
+                    </div>
+                    <input 
+                    type="number"   
+                    id="pwSize"
+                    placeholder="Between 8- 128 characters"
+                    aria-label="Choose password size between 8 through 128 characters"
+                    min="8"
+                    max="128"
+                    /> 
+                </div>
+
+                <div class="char-types-div" id="characterSelector">
+                    <label for="">Characters Types</label>
+                        <div class="errMsg" id="selectionErr">
+                            Choose at least 1.
+                        </div>
+
+                        <div class="checked-box">
+                            <input type="checkbox" name="lowercase" />
+                            <label>Lowercase</label>
+                        </div>
+
+                        <div class="checked-box">
+                            <input type="checkbox" name="uppercase" />
+                            <label>Uppercase</label>
+                        </div>
+
+                        <div class="checked-box">
+                            <input type="checkbox" name="number" />
+                            <label>Number</label>
+                        </div>
+
+                        <div class="checked-box">
+                            <input type="checkbox" name="specialChar" />
+                            <label>Special Characters</label>
+                        </div>
+                </div> 
+
+                <div class="modal-footer">
+                    <Button type="submit" id="generate" class="btn btn-modal" >Generate Password</button>
+                    <button id="closeModal" class="btn btn-modal">Close</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+</html>
